@@ -1,0 +1,54 @@
+/*
+** GRID-SETTINGS
+*/
+
+body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    justify-items: center;
+}
+
+// Will default to full viewport width for mobile sizes. Use media queries on individual page .scss files to adjust layouts for other screen sizes.
+section,
+article,
+footer,
+.contact-bar,
+.side-stories {
+    grid-column: 1 / span 12;
+    position: relative;
+}
+
+.space-top,
+article:first-of-type,
+section:first-of-type {
+    margin-top: 6rem;
+}
+
+@media (min-width: map-get($breakpoints, smaller-screen)) {
+
+    .space-top,
+    article:first-of-type,
+    section:first-of-type {
+        margin-top: 7rem;
+    }
+
+    .home-intro {
+        grid-column: 2 / 12;
+        max-width: 750px; /* Prevents side img's from straying too far */
+    }
+
+    .row-two {
+        grid-row: 2 / 3;
+    }
+
+}
+@media (min-width: map-get($breakpoints, medium)) {
+
+    .space-top,
+    article:first-of-type,
+    section:first-of-type {
+        margin-top: 8.5rem;
+    }
+}

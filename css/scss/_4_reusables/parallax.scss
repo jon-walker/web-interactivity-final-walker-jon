@@ -1,0 +1,24 @@
+/*
+**PARALLAX SCROLL EFFECTS
+*
+* Used https://www.w3schools.com/howto/howto_css_parallax.asp as a reference here
+*/
+
+.parallax-divider {
+    display: none;
+}
+
+@media (min-width: map-get($breakpoints, smaller-screen)) {
+
+    .parallax-divider {
+        display: block;
+        height: 25vh;
+        width: 100vw;
+        grid-column: 1 / span 12;
+        background-image: url(../img/aurora-bkg.jpg);
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}

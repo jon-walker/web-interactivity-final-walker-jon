@@ -1,0 +1,134 @@
+
+/* ------------------ INDIVIDUAL BLOG POSTS ------------------------------ */
+.single {
+
+    .contact-bar {
+        grid-row: 4 / 5;
+    }
+
+    footer {
+        grid-row: 5 / 6;
+    }
+}
+
+.post {
+    grid-column: 1 / span 12;
+}
+
+.blog-index_header {
+    grid-column: 3 / span 6;
+}
+
+.blog-sidebar {
+    color: #ffffff;
+    padding: 2%;
+    background-color: #dfe1e3;
+    grid-column: 1 / span 12;
+    margin: 4% auto;
+}
+
+.post_title {
+    text-align: left;
+}
+
+.post_date,
+.post_category {
+    padding: 0 2%;
+    font-style: italic;
+}
+
+/* COMMENTS */
+.comments { // Controls the outer div
+    grid-column: 1 / span 12;
+    grid-row: 3 / 4;
+
+    h2 {
+        text-align: left;
+        font-size: 1.8rem;
+    }
+}
+
+.comment { //Controls the li
+    list-style-type: none;
+}
+
+.comment-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto auto;
+
+    p {
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
+    }
+}
+
+.comment-author {
+    grid-column: 1 /2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+
+    cite {
+        text-align: center;
+    }
+}
+
+.comment-meta {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding-left: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.says {
+    display: none;
+}
+
+.reply {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.comment-respond form {
+    display: block;
+    margin-top: 1rem;
+    box-sizing: border-box;
+    width: 95%;
+
+    .form-submit {
+        width: 80%;
+        margin: auto;
+        padding-left: 2rem;
+
+        input[type=submit] {
+            font-size: 1rem;
+            margin-right: 0;
+        }
+    }
+}
+
+@media (min-width: map-get($breakpoints, smaller-screen)) {
+
+    .post {
+        grid-column: 3 / span 6;
+        grid-row: 1 / 2;
+        margin-bottom: 10%;
+    }
+
+    .blog-sidebar,
+    .sidebar {
+        grid-row: 1 / 2;
+        grid-column: 10 / 12;
+        box-shadow: 0 5px 9px rgba(20, 20, 20, 0.2);
+    }
+
+    .comments {
+        grid-column: 3 / span 6;
+        grid-row: 2 / 3;
+    }
+}
